@@ -1,0 +1,13 @@
+.SV-array {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.SV-actions {
+  margin: 1em 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
