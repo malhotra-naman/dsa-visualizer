@@ -39,7 +39,8 @@ export default function SortingVisualizer() {
     }
     const mid = arr.length / 2;
     const left = arr.splice(0, mid);
-    return _merge(_mergeSort(left), _mergeSort(arr));
+    const sortedArr = _merge(_mergeSort(left), _mergeSort(arr));
+    return sortedArr;
   };
 
   const mergeSort = () => {
