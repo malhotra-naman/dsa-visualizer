@@ -71,6 +71,27 @@ export default function SortingVisualizer() {
     }
   };
 
+  const quickSortVisualize = () => {
+    const animations = quickSort(array);
+    console.log(animations);
+    for (let i = 0; i < animations.length; i++) {
+      const arrayBars = document.querySelectorAll(".ArrayBar-container");
+      const { pivot, elements } = animations[i];
+      for (let element of elements) {
+        setTimeout(() => {
+          const [barOneIdx, barTwoIdx] = element;
+          const barOneStyle = arrayBars[barOneIdx].style;
+          const barTwoStyle = arrayBars[barTwoIdx].style;
+          barOneStyle.backgroundColor = SECONDARY_COLOR;
+          barTwoStyle.backgroundColor = SECONDARY_COLOR;
+          let temp = barOneStyle.height;
+          barOneStyle.height = barTwoStyle.height;
+          barTwoStyle.height = temp;
+        }, i * ANIMATION_SPEED_MS);
+      }
+    }
+  };
+
   return (
     <div className="SV-container">
       <div className="SV-array">
@@ -82,7 +103,7 @@ export default function SortingVisualizer() {
       <div className="SV-actions">
         <button onClick={resetArray}>Reset Array</button>
         <button onClick={mergeSortVisualize}>Merge Sort</button>
-        <button onClick={quickSort}>Quick Sort</button>
+        <button onClick={quickSortVisualize}>Quick Sort</button>
         <button onClick={heapSort}>Heap Sort</button>
         <button onClick={bubbleSort}>Bubble Sort</button>
         <button onClick={generateSIA}>Strictly Increasing Array</button>

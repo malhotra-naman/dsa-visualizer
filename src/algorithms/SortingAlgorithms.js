@@ -1,31 +1,3 @@
-// const _merge = (left, right) => {
-//   let arr = [];
-//   while (left.length && right.length) {
-//     if (left[0] < right[0]) {
-//       arr.push(left.shift());
-//     } else {
-//       arr.push(right.shift());
-//     }
-//   }
-//   return [...arr, ...left, ...right];
-// };
-
-// const _mergeSort = (arr) => {
-//   if (arr.length < 2) {
-//     return arr;
-//   }
-//   const mid = arr.length / 2;
-//   const left = arr.splice(0, mid);
-//   const sortedArr = _merge(_mergeSort(left), _mergeSort(arr));
-//   return sortedArr;
-// };
-
-// const mergeSort = (array, setArray) => {
-//   const arr = [...array];
-//   const sortedArr = _mergeSort(arr, 0, arr.length - 1);
-//   setArray([...sortedArr]);
-// };
-
 const _merge = (arr, si, mid, ei, tempArr, animations) => {
   let i = si;
   let j = mid + 1;
@@ -71,7 +43,49 @@ const mergeSort = (arr) => {
   return animations;
 };
 
-const quickSort = () => {};
+const _partition = (arr, start, end, animations) => {
+  // Taking the last element as the pivot
+  const pivotValue = arr[end];
+  let pivotIndex = start;
+  animations.push({
+    pivot: end,
+    elements: [],
+  });
+  for (let i = start; i < end; i++) {
+    if (arr[i] < pivotValue) {
+      // Swapping elements
+      animations[animations.length - 1].elements.push([i, pivotIndex]);
+      [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+      // Moving to next element
+      pivotIndex++;
+    }
+  }
+
+  // Putting the pivot value in the middle
+  [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]];
+  return pivotIndex;
+};
+
+const _quickSort = (arr, start, end, animations) => {
+  // Base case or terminating case
+  if (start >= end) {
+    return;
+  }
+
+  // Returns pivotIndex
+  let index = _partition(arr, start, end, animations);
+
+  // Recursively apply the same logic to the left and right subarrays
+  _quickSort(arr, start, index - 1, animations);
+  _quickSort(arr, index + 1, end, animations);
+};
+
+const quickSort = (arr) => {
+  const animations = [];
+  if (arr.length <= 1) return arr;
+  _quickSort(arr, 0, arr.length - 1, animations);
+  return animations;
+};
 
 const heapSort = () => {};
 
