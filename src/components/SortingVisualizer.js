@@ -78,6 +78,7 @@ export default function SortingVisualizer() {
           <ArrayBar key={idx} value={value} />
         ))}
       </div>
+      <div style={{ width: "300px" }} />
       <div className="SV-actions">
         <button onClick={resetArray}>Reset Array</button>
         <button onClick={mergeSortVisualize}>Merge Sort</button>
