@@ -1,3 +1,10 @@
+.SV-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .SV-array {
   display: flex;
   flex-direction: row;
@@ -8,6 +15,7 @@
 .SV-actions {
   margin: 1em 0;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }

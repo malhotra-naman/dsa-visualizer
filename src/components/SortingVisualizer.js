@@ -1,6 +1,24 @@
 import React, { useState, useEffect } from "react";
 import ArrayBar from "./ArrayBar";
+import {
+  mergeSort,
+  heapSort,
+  quickSort,
+  bubbleSort,
+} from "../algorithms/SortingAlgorithms";
 import "./SortingVisualizer.css";
+
+// Change this value for the speed of the animations.
+const ANIMATION_SPEED_MS = 1;
+
+// Change this value for the number of bars (value) in the array.
+const NUMBER_OF_ARRAY_BARS = 310;
+
+// This is the main color of the array bars.
+const PRIMARY_COLOR = "turquoise";
+
+// This is the color of array bars that are being compared throughout the animations.
+const SECONDARY_COLOR = "red";
 
 export default function SortingVisualizer() {
   const [array, setArray] = useState([]);
@@ -11,7 +29,7 @@ export default function SortingVisualizer() {
 
   const resetArray = () => {
     const arr = [];
-    for (let i = 0; i < 730; i++) {
+    for (let i = 0; i < 500; i++) {
       arr.push(randomInt(5, 750));
     }
     setArray([...arr]);
@@ -21,42 +39,40 @@ export default function SortingVisualizer() {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
-  const _merge = (left, right) => {
-    let arr = [];
-    while (left.length && right.length) {
-      if (left[0] < right[0]) {
-        arr.push(left.shift());
+  const generateSIA = () => {
+    const arr = [];
+    for (let i = 1; i < 500; i++) {
+      arr.push(i);
+    }
+    setArray([...arr]);
+  };
+
+  const mergeSortVisualize = () => {
+    const animations = mergeSort(array);
+    for (let i = 0; i < animations.length; i++) {
+      const arrayBars = document.querySelectorAll(".ArrayBar-container");
+      const isColorChange = i % 3 !== 2;
+      if (isColorChange) {
+        const [barOneIdx, barTwoIdx] = animations[i];
+        const barOneStyle = arrayBars[barOneIdx].style;
+        const barTwoStyle = arrayBars[barTwoIdx].style;
+        const color = i % 3 === 0 ? SECONDARY_COLOR : PRIMARY_COLOR;
+        setTimeout(() => {
+          barOneStyle.backgroundColor = color;
+          barTwoStyle.backgroundColor = color;
+        }, i * ANIMATION_SPEED_MS);
       } else {
-        arr.push(right.shift());
+        setTimeout(() => {
+          const [barOneIdx, newHeight] = animations[i];
+          const barOneStyle = arrayBars[barOneIdx].style;
+          barOneStyle.height = `${newHeight}px`;
+        }, i * ANIMATION_SPEED_MS);
       }
     }
-    return [...arr, ...left, ...right];
   };
-
-  const _mergeSort = (arr) => {
-    if (arr.length < 2) {
-      return arr;
-    }
-    const mid = arr.length / 2;
-    const left = arr.splice(0, mid);
-    const sortedArr = _merge(_mergeSort(left), _mergeSort(arr));
-    return sortedArr;
-  };
-
-  const mergeSort = () => {
-    const arr = [...array];
-    const sortedArr = _mergeSort(arr, 0, arr.length - 1);
-    setArray([...sortedArr]);
-  };
-
-  const quickSort = () => {};
-
-  const heapSort = () => {};
-
-  const bubbleSort = () => {};
 
   return (
-    <div>
+    <div className="SV-container">
       <div className="SV-array">
         {array.map((value, idx) => (
           <ArrayBar key={idx} value={value} />
@@ -64,10 +80,11 @@ export default function SortingVisualizer() {
       </div>
       <div className="SV-actions">
         <button onClick={resetArray}>Reset Array</button>
-        <button onClick={mergeSort}>Merge Sort</button>
+        <button onClick={mergeSortVisualize}>Merge Sort</button>
         <button onClick={quickSort}>Quick Sort</button>
         <button onClick={heapSort}>Heap Sort</button>
         <button onClick={bubbleSort}>Bubble Sort</button>
+        <button onClick={generateSIA}>Strictly Increasing Array</button>
       </div>
     </div>
   );
