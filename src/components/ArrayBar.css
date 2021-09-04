@@ -1,4 +1,5 @@
 .ArrayBar-container {
   background-color: tomato;
   width: 2px;
+  margin: 0 1px;
 }

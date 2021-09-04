@@ -9,10 +9,10 @@ import {
 import "./SortingVisualizer.css";
 
 // Change this value for the speed of the animations.
-const ANIMATION_SPEED_MS = 1;
+const ANIMATION_SPEED_MS = 10;
 
 // Change this value for the number of bars (value) in the array.
-const NUMBER_OF_ARRAY_BARS = 310;
+const NUMBER_OF_ARRAY_BARS = 250;
 
 // This is the main color of the array bars.
 const PRIMARY_COLOR = "turquoise";
@@ -29,7 +29,7 @@ export default function SortingVisualizer() {
 
   const resetArray = () => {
     const arr = [];
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
       arr.push(randomInt(5, 750));
     }
     setArray([...arr]);
@@ -41,7 +41,7 @@ export default function SortingVisualizer() {
 
   const generateSIA = () => {
     const arr = [];
-    for (let i = 1; i < 500; i++) {
+    for (let i = 1; i < NUMBER_OF_ARRAY_BARS; i++) {
       arr.push(i);
     }
     setArray([...arr]);
