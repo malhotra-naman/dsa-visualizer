@@ -1,12 +1,12 @@
 import React from "react";
 import "./App.css";
-
-import SortingVisualizer from "./components/SortingVisualizer";
+import PathFindingVisualizer from "./components/PathFindingVisualizer/PathFindingVisualizer";
 
 function App() {
   return (
     <div className="App">
-      <SortingVisualizer></SortingVisualizer>
+      {/* <SortingVisualizer /> */}
+      <PathFindingVisualizer />
     </div>
   );
 }
