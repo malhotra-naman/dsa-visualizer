@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Node from "./Node";
 
 export default function PathFindingVisualizer() {
-  const [table, setTable] = useState();
+  const [table, setTable] = useState([]);
 
   useEffect(() => {
     const arr = [];
@@ -15,7 +15,7 @@ export default function PathFindingVisualizer() {
         };
       }
     }
-    setTable([...arr]);
+    setTable(...arr);
   }, []);
 
   return (
