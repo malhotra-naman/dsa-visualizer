@@ -5,7 +5,7 @@ import {
   heapSort,
   quickSort,
   bubbleSort,
-} from "../algorithms/SortingAlgorithms";
+} from "../../algorithms/SortingAlgorithms";
 import "./SortingVisualizer.css";
 
 // Change this value for the speed of the animations.

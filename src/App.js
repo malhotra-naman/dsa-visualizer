@@ -1,13 +1,24 @@
 import React from "react";
-import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import SortingVisualizer from "./components/SortingVisualizer/SortingVisualizer";
 import PathFindingVisualizer from "./components/PathFindingVisualizer/PathFindingVisualizer";
 
+import "./App.css";
 function App() {
   return (
-    <div className="App">
-      {/* <SortingVisualizer /> */}
-      <PathFindingVisualizer />
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/sorting">
+            <SortingVisualizer />
+          </Route>
+          <Route path="/pathfinding">
+            <PathFindingVisualizer />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

@@ -6,9 +6,9 @@ export default function PathFindingVisualizer() {
 
   useEffect(() => {
     const arr = [];
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 50; i++) {
       arr[i] = [];
-      for (let j = 0; j < 200; j++) {
+      for (let j = 0; j < 50; j++) {
         arr[i][j] = {
           row: i,
           col: j,
@@ -19,14 +19,227 @@ export default function PathFindingVisualizer() {
   }, []);
 
   return (
-    <div>
-      {table.map((row, index) => (
-        <div key={index} style={{ display: "flex" }}>
-          {row.map((node, idx) => {
-            return <Node key={idx} />;
-          })}
-        </div>
-      ))}
+    <div style={{ margin: "4em" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {table[0].map((row, index) => {
+          return <Node />;
+        })}
+      </div>
     </div>
   );
 }
