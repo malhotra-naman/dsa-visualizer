@@ -69,11 +69,21 @@ const HomePage = () => {
           <span className="head">Trees</span>
           <hr />
           <Carousel breakPoints={breakPoints} className="carousel-container">
-            <div className="card one">Binary Tree</div>
-            <div className="card three">Binary Search Tree</div>
-            <div className="card two">N-Ary Tree</div>
-            <div className="card three">Graphs</div>
-            <div className="card one">Heaps</div>
+            <div className="card one">
+              <span>Binary Tree</span>
+            </div>
+            <div className="card three">
+              <span>Binary Search Tree</span>
+            </div>
+            <div className="card two">
+              <span>N-Ary Tree</span>
+            </div>
+            <div className="card three">
+              <span>Graphs</span>
+            </div>
+            <div className="card one">
+              <span>Heaps</span>
+            </div>
           </Carousel>
         </div>
       </div>
