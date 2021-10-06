@@ -1,11 +1,15 @@
 .SV-container {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
 
 .SV-array {
+  margin: 2em;
+  padding: 2em 2em 0;
+  background-color: wheat;
+  border: 2px solid black;
   display: flex;
   flex-direction: row;
   justify-content: center;

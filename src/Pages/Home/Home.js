@@ -1,13 +1,20 @@
 import React from "react";
 import "./Home.css";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+} from "react-router-dom";
 
 import Carousel from "react-elastic-carousel";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const HomePage = () => {
+  const history = useHistory();
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 1 },
@@ -28,14 +35,15 @@ const HomePage = () => {
             <div className="card two">
               <span>Binary Search</span>
             </div>
-            <div className="card three">
-              <Link
-                to="/sorting"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                <span>Merge Sort</span>
-              </Link>
+            <div
+              className="card three"
+              onClick={() => {
+                history.push("/sorting");
+              }}
+            >
+              <span>Merge Sort</span>
             </div>
+
             <div className="card one">
               <span>Quick Sort</span>
             </div>

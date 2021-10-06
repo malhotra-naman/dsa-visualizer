@@ -1,17 +1,13 @@
-.main {
-  background-color: #000;
-  height: 2em;
+.controls-container {
+  background-color: #cef;
+  height: 3em;
   width: 100%;
 }
-.title {
+
+.controls-title {
   color: #fff;
   font-size: 2rem;
   font-family: "Courier New", Courier, monospace;
   display: block;
   text-align: center;
-}
-.sub-title {
-  font-size: 1.5em !important;
-  margin: 0 1em;
-  cursor: pointer;
 }

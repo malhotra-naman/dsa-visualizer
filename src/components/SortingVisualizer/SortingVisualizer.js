@@ -7,29 +7,29 @@ import {
   bubbleSort,
 } from "../../algorithms/SortingAlgorithms";
 import "./SortingVisualizer.css";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import Controls from "./Controls";
 
-// Change this value for the speed of the animations.
 const ANIMATION_SPEED_MS = 5;
 
-// Change this value for the number of bars (value) in the array.
-const NUMBER_OF_ARRAY_BARS = 250;
+const NUMBER_OF_ARRAY_BARS = 150;
 
-// This is the main color of the array bars.
 const PRIMARY_COLOR = "turquoise";
 
-// This is the color of array bars that are being compared throughout the animations.
 const SECONDARY_COLOR = "red";
 
 export default function SortingVisualizer() {
   const [array, setArray] = useState([]);
+  const [arraySize, setArraySize] = useState(100);
 
   useEffect(() => {
     resetArray();
-  }, []);
+  }, [arraySize]);
 
   const resetArray = () => {
     const arr = [];
-    for (let i = 0; i < NUMBER_OF_ARRAY_BARS; i++) {
+    for (let i = 0; i < arraySize; i++) {
       arr.push(randomInt(5, 750));
     }
     setArray([...arr]);
@@ -39,13 +39,13 @@ export default function SortingVisualizer() {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
-  const generateSIA = () => {
-    const arr = [];
-    for (let i = 1; i < NUMBER_OF_ARRAY_BARS; i++) {
-      arr.push(i);
-    }
-    setArray([...arr]);
-  };
+  // const generateSIA = () => {
+  //   const arr = [];
+  //   for (let i = 1; i < NUMBER_OF_ARRAY_BARS; i++) {
+  //     arr.push(i);
+  //   }
+  //   setArray([...arr]);
+  // };
 
   const mergeSortVisualize = () => {
     const animations = mergeSort(array);
@@ -71,43 +71,48 @@ export default function SortingVisualizer() {
     }
   };
 
-  const quickSortVisualize = () => {
-    const animations = quickSort(array);
-    console.log(animations);
-    for (let i = 0; i < animations.length; i++) {
-      const arrayBars = document.querySelectorAll(".ArrayBar-container");
-      const { pivot, elements } = animations[i];
-      for (let element of elements) {
-        setTimeout(() => {
-          const [barOneIdx, barTwoIdx] = element;
-          const barOneStyle = arrayBars[barOneIdx].style;
-          const barTwoStyle = arrayBars[barTwoIdx].style;
-          barOneStyle.backgroundColor = SECONDARY_COLOR;
-          barTwoStyle.backgroundColor = SECONDARY_COLOR;
-          let temp = barOneStyle.height;
-          barOneStyle.height = barTwoStyle.height;
-          barTwoStyle.height = temp;
-        }, i * ANIMATION_SPEED_MS);
-      }
-    }
-  };
+  // const quickSortVisualize = () => {
+  //   const animations = quickSort(array);
+  //   console.log(animations);
+  //   for (let i = 0; i < animations.length; i++) {
+  //     const arrayBars = document.querySelectorAll(".ArrayBar-container");
+  //     const { pivot, elements } = animations[i];
+  //     for (let element of elements) {
+  //       setTimeout(() => {
+  //         const [barOneIdx, barTwoIdx] = element;
+  //         const barOneStyle = arrayBars[barOneIdx].style;
+  //         const barTwoStyle = arrayBars[barTwoIdx].style;
+  //         barOneStyle.backgroundColor = SECONDARY_COLOR;
+  //         barTwoStyle.backgroundColor = SECONDARY_COLOR;
+  //         let temp = barOneStyle.height;
+  //         barOneStyle.height = barTwoStyle.height;
+  //         barTwoStyle.height = temp;
+  //       }, i * ANIMATION_SPEED_MS);
+  //     }
+  //   }
+  // };
 
   return (
-    <div className="SV-container">
-      <div className="SV-array">
-        {array.map((value, idx) => (
-          <ArrayBar key={idx} value={value} />
-        ))}
+    <>
+      <Header isHome={false} />
+      <Controls
+        arraySize={arraySize}
+        setArraySize={setArraySize}
+        resetArray={resetArray}
+        mergeSortVisualize={mergeSortVisualize}
+      />
+      <div className="SV-container">
+        <div className="SV-array">
+          {array.map((value, idx) => (
+            <ArrayBar key={idx} value={value} />
+          ))}
+        </div>
+        {/* <div className="SV-actions">
+          <button onClick={resetArray}>Reset Array</button>
+          <button onClick={mergeSortVisualize}>Merge Sort</button>
+        </div> */}
       </div>
-      <div style={{ width: "300px" }} />
-      <div className="SV-actions">
-        <button onClick={resetArray}>Reset Array</button>
-        <button onClick={mergeSortVisualize}>Merge Sort</button>
-        <button onClick={quickSortVisualize}>Quick Sort</button>
-        <button onClick={heapSort}>Heap Sort</button>
-        <button onClick={bubbleSort}>Bubble Sort</button>
-        <button onClick={generateSIA}>Strictly Increasing Array</button>
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 }
