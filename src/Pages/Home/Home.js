@@ -4,6 +4,8 @@ import "./Home.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import Carousel from "react-elastic-carousel";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const HomePage = () => {
   const breakPoints = [
@@ -13,63 +15,70 @@ const HomePage = () => {
     { width: 1200, itemsToShow: 3 },
   ];
   return (
-    <div className="homePage">
-      <div className="searchsort">
-        <span className="head">Searching &amp; Sorting</span>
-        <hr />
-        <Carousel breakPoints={breakPoints}>
-          <div className="card">
-            <span>Linear Search</span>
-          </div>
-          <div className="card">
-            <span>Binary Search</span>
-          </div>
-          <div className="card">
-            <Link to="/sorting">
-              <span>Merge Sort</span>
-            </Link>
-          </div>
-          <div className="card">
-            <span>Quick Sort</span>
-          </div>
-          <div className="card">
-            <span>Heap Sort</span>
-          </div>
-        </Carousel>
+    <>
+      <Header />
+      <div className="homePage">
+        <div className="container">
+          <span className="head">Searching &amp; Sorting</span>
+          <hr />
+          <Carousel breakPoints={breakPoints} className="carousel-container">
+            <div className="card one">
+              <span>Linear Search</span>
+            </div>
+            <div className="card two">
+              <span>Binary Search</span>
+            </div>
+            <div className="card three">
+              <Link
+                to="/sorting"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                <span>Merge Sort</span>
+              </Link>
+            </div>
+            <div className="card one">
+              <span>Quick Sort</span>
+            </div>
+            <div className="card two">
+              <span>Heap Sort</span>
+            </div>
+          </Carousel>
+        </div>
+        <div className="container">
+          <span className="head">Pathfinding Algorithms</span>
+          <hr />
+          <Carousel breakPoints={breakPoints} className="carousel-container">
+            <div className="card three">
+              <span>A*</span>
+            </div>
+            <div className="card one">
+              <span>Djkistra</span>
+            </div>
+            <div className="card two">
+              <span>DFS</span>
+            </div>
+            <div className="card one">
+              <span>BFS</span>
+            </div>
+            <div className="card three">
+              <span>Bellman-Ford</span>
+            </div>
+          </Carousel>
+        </div>
+        <div className="container">
+          <span className="head">Trees</span>
+          <hr />
+          <Carousel breakPoints={breakPoints} className="carousel-container">
+            <div className="card one">Binary Tree</div>
+            <div className="card three">Binary Search Tree</div>
+            <div className="card two">N-Ary Tree</div>
+            <div className="card three">Graphs</div>
+            <div className="card one">Heaps</div>
+          </Carousel>
+        </div>
       </div>
-      <div className="pathfinding">
-        <span className="head">Pathfinding Algorithms</span>
-        <hr />
-        <Carousel breakPoints={breakPoints}>
-          <div className="card">
-            <span>A*</span>
-          </div>
-          <div className="card">
-            <span>Djkistra</span>
-          </div>
-          <div className="card">
-            <span>Algo3</span>
-          </div>
-          <div className="card">
-            <span>Algo4</span>
-          </div>
-          <div className="card">
-            <span>Algo5</span>
-          </div>
-        </Carousel>
-      </div>
-      <div className="trees">
-        <span className="head">Trees</span>
-        <hr />
-        <Carousel breakPoints={breakPoints}>
-          <div className="card">Binary Tree</div>
-          <div className="card">Binary Search Tree</div>
-          <div className="card"></div>
-          <div className="card"></div>
-          <div className="card"></div>
-        </Carousel>
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
