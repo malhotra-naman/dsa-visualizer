@@ -1,5 +1,8 @@
 import React from "react";
 import "./Home.css";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
 import Carousel from "react-elastic-carousel";
 
 const HomePage = () => {
@@ -22,7 +25,9 @@ const HomePage = () => {
             <span>Binary Search</span>
           </div>
           <div className="card">
-            <span>Merge Sort</span>
+            <Link to="/sorting">
+              <span>Merge Sort</span>
+            </Link>
           </div>
           <div className="card">
             <span>Quick Sort</span>
