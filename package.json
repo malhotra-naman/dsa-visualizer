@@ -14,7 +14,7 @@
     "react-responsive-carousel": "^3.2.21",
     "react-scripts": "4.0.3",
     "styled-components": "^5.3.1",
-    "swiper": "^7.0.0",
+    "swiper": "^7.0.6",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

@@ -1,0 +1,14 @@
+.main {
+  background-color: #000;
+  height: 40px;
+  width: 100%;
+  top: 0%;
+  position: fixed;
+}
+.title {
+  color: #fff;
+  font-size: 2rem;
+  font-family: "Courier New", Courier, monospace;
+  display: block;
+  text-align: center;
+}
