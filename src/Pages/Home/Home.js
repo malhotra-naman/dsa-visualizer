@@ -8,6 +8,7 @@ import {
   Link,
   useHistory,
 } from "react-router-dom";
+import Particles from "react-particles-js";
 
 import Carousel from "react-elastic-carousel";
 import Header from "../../components/Header/Header";
@@ -25,6 +26,18 @@ const HomePage = () => {
     <>
       <Header />
       <div className="homePage">
+        <Particles
+          params={{
+            polygon: {
+              enable: true,
+              type: "inside",
+              move: {
+                radius: 1,
+              },
+            },
+          }}
+          id="particles-js"
+        />
         <div className="container">
           <span className="head">Searching &amp; Sorting</span>
           <hr />
