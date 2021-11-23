@@ -45,23 +45,38 @@ const HomePage = () => {
             <div className="card one">
               <span>Linear Search</span>
             </div>
-            <div className="card two">
-              <span>Binary Search</span>
+            <div
+              className="card two"
+              onClick={() => {
+                history.push("/quick_sort");
+              }}
+            >
+              <span>Quick Sort</span>
             </div>
             <div
               className="card three"
               onClick={() => {
-                history.push("/sorting");
+                history.push("/merge_sort");
               }}
             >
               <span>Merge Sort</span>
             </div>
 
-            <div className="card one">
-              <span>Quick Sort</span>
-            </div>
-            <div className="card two">
+            <div
+              className="card one"
+              onClick={() => {
+                history.push("/heap_sort");
+              }}
+            >
               <span>Heap Sort</span>
+            </div>
+            <div
+              className="card two"
+              onClick={() => {
+                history.push("/bubble_sort");
+              }}
+            >
+              <span>Bubble Sort</span>
             </div>
           </Carousel>
         </div>

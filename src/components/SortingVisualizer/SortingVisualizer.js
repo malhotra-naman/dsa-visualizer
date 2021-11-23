@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import ArrayBar from "./ArrayBar";
 import {
   mergeSort,
   heapSort,
   quickSort,
   bubbleSort,
-} from "../../algorithms/SortingAlgorithms";
+} from "../../algorithms_/SortingAlgorithms";
 import "./SortingVisualizer.css";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -20,6 +21,8 @@ const PRIMARY_COLOR = "turquoise";
 const SECONDARY_COLOR = "red";
 
 export default function SortingVisualizer() {
+  const location = useLocation();
+  console.log(location.pathname);
   const [array, setArray] = useState([]);
   const [arraySize, setArraySize] = useState(100);
 

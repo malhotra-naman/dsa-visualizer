@@ -1,13 +1,7 @@
 import React from "react";
-
 import "./Controls.css";
 
-export default function Controls({
-  arraySize,
-  setArraySize,
-  resetArray,
-  mergeSortVisualize,
-}) {
+function Controls({ arraySize, setArraySize, resetArray, mergeSortVisualize }) {
   return (
     <div
       className="controls-container"
@@ -40,3 +34,5 @@ export default function Controls({
     </div>
   );
 }
+
+export default Controls;
