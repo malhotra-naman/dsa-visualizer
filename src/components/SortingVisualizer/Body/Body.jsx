@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { useLocation } from "react-router-dom";
 import ArrayBar from "../../SortingVisualizer/ArrayBar";
-import "../../SortingVisualizer/SortingVisualizer.css";
 import "./Body.css";
 
 class Body extends Component {

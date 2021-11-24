@@ -1,25 +1,9 @@
-.SV-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.SV-array {
-  margin: 2em;
-  padding: 2em 2em 0;
-  background-color: wheat;
-  border: 2px solid black;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.SV-actions {
-  margin: 1em 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+body {
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }

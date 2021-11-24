@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Toolbar from "./Toolbar/ToolbarContainer.js";
+import Controls from "./Controls/ControlsContainer";
 import Body from "./Body/BodyContainer.js";
-import "./Main.css";
+import "./SortingVisualizer.css";
 import Header from "../Header/Header.js";
 import Footer from "../Footer/Footer.js";
 
-class Main extends Component {
+class SortingVisualizer extends Component {
   constructor(props) {
     super(props);
   }
@@ -18,7 +18,7 @@ class Main extends Component {
     return (
       <div>
         <Header isHome={false} />
-        <Toolbar pathname={this.props.location.pathname} />
+        <Controls pathname={this.props.location.pathname} />
         <Body />
         <Footer />
       </div>
@@ -26,4 +26,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default SortingVisualizer;

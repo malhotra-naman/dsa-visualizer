@@ -84,16 +84,36 @@ const HomePage = () => {
           <span className="head">Pathfinding Algorithms</span>
           <hr />
           <Carousel breakPoints={breakPoints} className="carousel-container">
-            <div className="card three">
+            <div
+              className="card three"
+              onClick={() => {
+                history.push("/astar");
+              }}
+            >
               <span>A*</span>
             </div>
-            <div className="card one">
-              <span>Djkistra</span>
+            <div
+              className="card one"
+              onClick={() => {
+                history.push("/dijkstra");
+              }}
+            >
+              <span>Dijkstra</span>
             </div>
-            <div className="card two">
+            <div
+              className="card two"
+              onClick={() => {
+                history.push("/dfs");
+              }}
+            >
               <span>DFS</span>
             </div>
-            <div className="card one">
+            <div
+              className="card one"
+              onClick={() => {
+                history.push("/bfs");
+              }}
+            >
               <span>BFS</span>
             </div>
             <div className="card three">

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Toolbar from "./Toolbar.jsx";
+import Controls from "./Controls.jsx";
 import { setArray } from "../../../reducers/array";
 import { setAlgorithm } from "../../../reducers/algorithm";
 import { setCurrentSorted } from "../../../reducers/sorted";
@@ -46,4 +46,4 @@ const mapDispatchToProps = () => (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Toolbar);
+export default connect(mapStateToProps, mapDispatchToProps)(Controls);

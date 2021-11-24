@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "../../SortingVisualizer/Controls.css";
+import "./Controls.css";
 
-class Toolbar extends Component {
+class Controls extends Component {
   constructor(props) {
     super(props);
     this.handleChange = this.handleChange.bind(this);
@@ -81,4 +81,4 @@ class Toolbar extends Component {
   }
 }
 
-export default Toolbar;
+export default Controls;

@@ -1,21 +1,22 @@
 import React from "react";
 import "./App.css";
-import PathFindingVisualizer from "./components/PathFindingVisualizer/PathFindingVisualizer";
-import SortingVisualizer from "./components/SortingVisualizer/SortingVisualizer";
 import HomePage from "./Pages/Home/Home";
-import Header from "./components/Header/Header";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
-import Main from "./components/Main/MainContainer";
+import SortingVisualizer from "./components/SortingVisualizer/SortingVisualizerContainer";
+import PathfindingVisualizer from "./components/PathFindingVisualizer/PathfindingVisualizerContainer";
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/merge_sort" component={Main} />
-          <Route exact path="/quick_sort" component={Main} />
-          <Route exact path="/heap_sort" component={Main} />
-          <Route exact path="/bubble_sort" component={Main} />
+          <Route exact path="/merge_sort" component={SortingVisualizer} />
+          <Route exact path="/quick_sort" component={SortingVisualizer} />
+          <Route exact path="/heap_sort" component={SortingVisualizer} />
+          <Route exact path="/bubble_sort" component={SortingVisualizer} />
+          <Route exact path="/astar" component={PathfindingVisualizer} />
+          <Route exact path="/dijkstra" component={PathfindingVisualizer} />
+          <Route exact path="/bfs" component={PathfindingVisualizer} />
+          <Route exact path="/dfs" component={PathfindingVisualizer} />
           <Route exact path="/">
             <HomePage />
           </Route>
