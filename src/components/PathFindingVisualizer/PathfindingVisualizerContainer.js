@@ -28,7 +28,7 @@ export default function PathfindingVisualizerContainer(props) {
 
   return (
     <div>
-      <Header isHome={false} />
+      <Header isHome={false} header={props.location.pathname} />
       <PathfindingVisualizer algo={algo} />
       <Footer />
     </div>

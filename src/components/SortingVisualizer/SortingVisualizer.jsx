@@ -17,7 +17,7 @@ class SortingVisualizer extends Component {
   render() {
     return (
       <div>
-        <Header isHome={false} />
+        <Header isHome={false} header={this.props.location.pathname} />
         <Controls pathname={this.props.location.pathname} />
         <Body />
         <Footer />

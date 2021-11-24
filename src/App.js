@@ -4,10 +4,12 @@ import HomePage from "./Pages/Home/Home";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import SortingVisualizer from "./components/SortingVisualizer/SortingVisualizerContainer";
 import PathfindingVisualizer from "./components/PathFindingVisualizer/PathfindingVisualizerContainer";
+import ScrollToTop from "./ScrollToTop";
 function App() {
   return (
     <div className="App">
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route exact path="/merge_sort" component={SortingVisualizer} />
           <Route exact path="/quick_sort" component={SortingVisualizer} />

@@ -57,9 +57,9 @@ class Controls extends Component {
         </div>
         <button
           id={!isRunning ? "generateArray" : "generateArrayX"}
-          style={{ color: color, cursor: cursor }}
+          style={{ cursor: cursor }}
           onClick={!isRunning ? () => generateArray(array.length) : null}
-          className="btn btn-info"
+          className="btn"
           disabled={isRunning ? "disabled" : null}
         >
           Generate New Array
@@ -68,7 +68,7 @@ class Controls extends Component {
         {algorithm ? (
           <button
             id="sort"
-            style={{ color: color, cursor: cursor }}
+            style={{ cursor: cursor }}
             onClick={!isRunning ? () => sort(algorithm, array, speed) : null}
             className="btn btn-primary"
             disabled={isRunning ? "disabled" : null}

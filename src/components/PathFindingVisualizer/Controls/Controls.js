@@ -30,7 +30,11 @@ export default class Controls extends Component {
             }}
           />
         </div>
-        <button type="button" onClick={() => this.props.clearGrid()}>
+        <button
+          type="button"
+          onClick={() => this.props.clearGrid()}
+          className="btn"
+        >
           Clear Grid
         </button>
         <button
