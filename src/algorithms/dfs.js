@@ -1,7 +1,3 @@
-// Returns all nodes in the order in which they were visited.
-// Make nodes point back to their previous node so that we can compute the shortest path
-// by backtracking from the finish node.
-
 export function dfs(grid, startNode, finishNode) {
   const visitedNodesInOrder = [];
   const nextNodesStack = [];

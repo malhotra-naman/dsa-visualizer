@@ -1,19 +1,11 @@
-// Returns all nodes in the order in which they were visited.
-// Make nodes point back to their previous node so that we can compute the shortest path
-// by backtracking from the finish node.
-
 export function dijkstra(grid, startNode, finishNode) {
   const visitedNodesInOrder = [];
   startNode.distance = 0;
-  const unvisitedNodes = getAllNodes(grid); // Q: different from using grid or slice of grid???
-
+  const unvisitedNodes = getAllNodes(grid);
   while (unvisitedNodes.length) {
     sortNodesByDistance(unvisitedNodes);
     const closestNode = unvisitedNodes.shift();
-    // If we encounter a wall, we skip it.
     if (!closestNode.isWall) {
-      // If the closest node is at a distance of infinity,
-      // we must be trapped and should stop.
       if (closestNode.distance === Infinity) return visitedNodesInOrder;
       closestNode.isVisited = true;
       visitedNodesInOrder.push(closestNode);

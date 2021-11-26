@@ -1,7 +1,3 @@
-// Returns all nodes in the order in which they were visited.
-// Make nodes point back to their previous node so that we can compute the shortest path
-// by backtracking from the finish node.
-
 export function bfs(grid, startNode, finishNode) {
   const visitedNodesInOrder = [];
   let nextNodesStack = [startNode];
@@ -47,5 +43,4 @@ export function bfs(grid, startNode, finishNode) {
       }
     }
   }
-  // return visitedNodesInOrder;
 }
