@@ -42,9 +42,6 @@ const HomePage = () => {
           <span className="head">Searching &amp; Sorting</span>
           <hr />
           <Carousel breakPoints={breakPoints} className="carousel-container">
-            <div className="card one">
-              <span>Linear Search</span>
-            </div>
             <div
               className="card two"
               onClick={() => {
@@ -116,12 +113,9 @@ const HomePage = () => {
             >
               <span>BFS</span>
             </div>
-            <div className="card three">
-              <span>Bellman-Ford</span>
-            </div>
           </Carousel>
         </div>
-        <div className="container">
+        {/* <div className="container">
           <span className="head">Trees</span>
           <hr />
           <Carousel breakPoints={breakPoints} className="carousel-container">
@@ -141,7 +135,7 @@ const HomePage = () => {
               <span>Heaps</span>
             </div>
           </Carousel>
-        </div>
+        </div> */}
       </div>
       <Footer />
     </>
